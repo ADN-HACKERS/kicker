@@ -9,4 +9,5 @@ module.exports.signUp=async (req,res)=>{
   catch(err){
     res.status(200).send({err})
   }
+  
 }
