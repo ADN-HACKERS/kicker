@@ -37,6 +37,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "./uploads/profil/random-user.png"
     },
+    info:{
+      type: String
+    },
     stars: {
       type: [String]
     }
