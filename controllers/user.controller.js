@@ -57,3 +57,58 @@ module.exports.deleteUser= async (req,res) =>{
     return res.status(500).json(err);
   }
 }
+module.exports.kicker= async (req,res) =>{
+  if(!ObjectID.isValid(req.params.id) || !ObjectID.isValid(req.body.idToKicker))
+  return res.status(400).json('Id unknown : ' + req.params.id)
+  try{
+// add to the kickers list
+await UserModel.findByIdAndUpdate(req.params.id,{$addToSet:{kicked:req.body.idToKicker}},
+  {new:true , upsert:true},
+  (err,data)=>{
+    if(!err) res.status(201).json(data);
+    else return res.status(400).json(err)
+  }
+  
+  )
+  // add to kicked list
+  await UserModel.findByIdAndUpdate(req.body.idToKicker,
+    {$addToSet:{kickers:req.params.id}},
+    {new:true , upsert:true},
+  (err,data)=>{
+    // if(!err) res.status(201).json(data);
+    if(err) return res.status(400).json(err)
+  }
+  )
+  }catch(err){
+    return res.status(500).json(err);
+  }
+}
+
+module.exports.deskicked= async (req,res) =>{
+  if(!ObjectID.isValid(req.params.id) ||!ObjectID.isValid(req.body.idToDeskicked) )
+  return res.status(400).json('Id unknown : ' + req.params.id)
+  
+    try{
+      await UserModel.findByIdAndUpdate(req.params.id,{$pull:{kicked:req.body.idToDeskicked}},
+        {new:true , upsert:true},
+        (err,data)=>{
+          if(!err) res.status(201).json(data);
+          else return res.status(400).json(err)
+        }
+        
+        )
+        // add to kicked list
+        await UserModel.findByIdAndUpdate(req.body.idToDeskicked,
+          {$pull:{kickers:req.params.id}},
+          {new:true , upsert:true},
+        (err,data)=>{
+          // if(!err) res.status(201).json(data);
+          if(err) return res.status(400).json(err)
+        }
+        )
+    }
+  
+  catch(err){
+    return res.status(500).json(err);
+  }
+}
