@@ -3,12 +3,14 @@ require("dotenv").config({ path: "./config/.env" });
 const userRoutes = require("./routes/user.routes");
 const postRoutes = require("./routes/post.routes");
 const cors = require("cors");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 require("./config/db");
 
 const app = express();
+const port = 5000
+
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -19,8 +21,10 @@ const corsOptions = {
   preflightContinue: false
 };
 app.use(cors(corsOptions));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.get("*", checkUser);
@@ -32,6 +36,6 @@ app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);
 
 // connect the server
-app.listen(process.env.PORT, () => {
-  console.log(`server running on port ${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`server running on port ${port}`);
 });
