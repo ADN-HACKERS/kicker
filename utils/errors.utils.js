@@ -38,6 +38,7 @@ module.exports.uploadErrors = (err) => {
 
   return errors;
 };
+
 module.exports.uploadErrors =(err)=>{
   let errors={format: "", maxSize:""}
   if(err.message.includes('invalid file'))
@@ -46,3 +47,5 @@ module.exports.uploadErrors =(err)=>{
   errors.maxSize='Le file exceeded 500ko'
   return errors
 }
+
+
