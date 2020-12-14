@@ -1,8 +1,13 @@
 import React from 'react';
+import LeftNav from '../components/LeftNav';
+import Thread from '../components/thread';
 const Home=()=>{
   return (
     <div>
-    hello Home
+   <LeftNav />
+   <div>
+     <Thread />
+   </div>
     </div>
   )
 }
