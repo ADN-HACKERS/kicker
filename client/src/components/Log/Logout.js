@@ -26,8 +26,8 @@ const Logout = ()=>{
 
   return (
     <li onClick={logout}>
-      <p>HELLO</p>
-      {/* <img src="./img/icons/logout.svg" alt="logout" /> */}
+      <p>Logout</p>
+      <img src="./kicker logo.png" alt="logout" />
     </li>
   );
 }

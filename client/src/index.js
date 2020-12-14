@@ -9,6 +9,7 @@ import rootReducer from './reducers';
 //dev tools
 import {composeWithDevTools} from 'redux-devtools-extension';
 import logger from 'redux-logger';
+import './App.css'
 // dhia test
 // creation our store 
 const store=createStore(
