@@ -6,9 +6,11 @@ import UploadImg from "./UploadImg"
 import moment from "moment"
 const UpdateProfil=()=> {
   const [bio,setBio]=useState('');
-  const [updateForm,setUpdateForm]=useState(false)
-  const userData=useSelector((state)=>state.userReducer)
-  const dispatch = useDispatch()
+  const [updateForm,setUpdateForm]=useState(false);
+  const userData=useSelector((state)=>state.userReducer);
+
+  const dispatch = useDispatch();
+  
   const handleUpdate=()=>{
     dispatch(updateBio(userData._id,bio))
     setUpdateForm(false)
@@ -41,7 +43,8 @@ const UpdateProfil=()=> {
           )}
         </div>
         <h4>member since : {moment(userData.createdAt).fromNow()}</h4>
-        <h5>kicked:{userData.kicked ? userData.kicked.length: '0'}</h5>
+        <h5 >kicked:{userData.kicked ? userData.kicked.length: '0'}</h5>
+        <h5>kickers:{userData.kickers ? userData.kickers.length: ''}</h5>
       </div>
     </div>
     </div>
