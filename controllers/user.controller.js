@@ -32,7 +32,7 @@ module.exports.updateUser = async(req,res)=>{
       _id:req.params.id
     },
     {$set: {
-      info: req.body.info
+      bio: req.body.bio
     }},
     {
       new: true,
