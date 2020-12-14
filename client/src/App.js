@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux'
-import "./App.css";
+
 import Routes from "./components/Routes";
 import { UidContext } from "./components/AppContext";
 import axios from "axios";
@@ -28,7 +28,7 @@ const App = () => {
 
   }, [uid]);
   return (
-    <div>
+    <div >
       {/* store id of user */}
       <UidContext.Provider value={uid}>
         <Routes />
