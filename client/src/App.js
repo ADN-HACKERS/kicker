@@ -5,7 +5,6 @@ import Routes from "./components/Routes";
 import { UidContext } from "./components/AppContext";
 import axios from "axios";
 import {getUser} from './actions/user.actions';
-import logo from 'C:/Users/Yass-Sali/Desktop/kicker/client/src/pages/kicker logo.png'
 const App = () => {
   const [uid, setUid] = useState(null);
   const dispatch =useDispatch()
