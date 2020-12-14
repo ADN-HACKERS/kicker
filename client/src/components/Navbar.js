@@ -3,6 +3,7 @@ import {useSelector} from "react-redux"
 import {NavLink} from 'react-router-dom'
 import {UidContext} from './AppContext'
 import Logout from './Log/Logout'
+import 'C:/Users/Yass-Sali/Desktop/kicker/client/src/App.css';
 
 
 const Navbar=()=>{
@@ -10,37 +11,38 @@ const Navbar=()=>{
 
   const userData=useSelector((state)=>state.userReducer)
   return (
-<nav>
-  <div className="nav-container">
-  <div className="logo">
-   <NavLink exact to='/'>
-     <div className="logo">
-       <img src='./img/icon.png' alt='icon'/>
-       <h5>Kicker</h5>
-     </div>
+<nav  style={{display:'flex' , backgroundColor:'#77a8a8',margin: '10px', height: '40px',justifyContent: 'space-between' , height:'60px'}}> 
+  {/* <div className="nav-container" style={{display:'flex' }}>
+  <div className="logo"> */}
+   <NavLink exact to='/' style={{textDecoration: 'none'}}>
+     {/* <div className="logo"> */}
+      
+    <h2 className='nav-link'style={{color:'white'}}>Go to Home Page </h2>
+     {/* </div> */}
    </NavLink>
-  </div>
+  {/* </div> */}
   {uid ? (
-          <ul>
-            <li></li>
-            <li className="welcome">
-              <NavLink exact to="/profil">
-                <h5>Welcome {userData.username}</h5>
+          <div>
+            
+            {/* <div className="welcome"> */}
+              <NavLink exact to="/profil" style={{textDecoration: 'none'}}>
+                <h2 className='nav-link'>Welcome {userData.username}</h2>
               </NavLink>
-            </li>
-            <Logout/>
-          </ul>
+            {/* </div> */}
+            <Logout className='nav-link' style={{textDecoration: 'none'}}/>
+          </div>
         ) : (
-          <ul>
-            <li></li>
-            <li>
-              <NavLink exact to="/profil">
-                <img src="./img/icons/login.svg" alt="login"/>
+          <div>
+            
+            {/* <div> */}
+              <NavLink exact to="/profil" style={{textDecoration: 'none'}}>
+                <h2 className='nav-link'style={{color:'white'}}>Sign up or Login </h2>
+                {/* <img src="./img/icons/login.svg" alt="login"/> */}
               </NavLink>
-            </li>
-          </ul>
+            {/* </div> */}
+          </div>
         )}
-  </div>
+  {/* </div> */}
 </nav>
   )
 }

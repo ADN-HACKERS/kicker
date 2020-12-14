@@ -66,7 +66,7 @@ const SignUpForm = () => {
             name="username"
             id="username"
             onChange={(e) => setUsername(e.target.value)}
-            value={username}></input>
+            value={username} style={{borderColor:'white',borderRadius:'5px'}}></input>
           <div className="username error"></div>
           <br />
           <label htmlFor="email">Email</label>
@@ -76,7 +76,7 @@ const SignUpForm = () => {
             name="email"
             id="email"
             onChange={(e) => setEmail(e.target.value)}
-            value={email}></input>
+            value={email} style={{borderColor:'white',borderRadius:'5px'}}></input>
           <div className="email error"></div>
           <br />
           <label htmlFor="password">Password</label>
@@ -86,7 +86,7 @@ const SignUpForm = () => {
             name="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}
-            value={password}></input>
+            value={password} style={{borderColor:'white',borderRadius:'5px'}}></input>
           <div className="password error"></div>
           <br />
           <label htmlFor="confirmPassword"> Password Confirmation</label>
@@ -96,7 +96,7 @@ const SignUpForm = () => {
             name="confirmPassword"
             id="confirmPassword"
             onChange={(e) => setConfirmPassword(e.target.value)}
-            value={confirmPassword}></input>
+            value={confirmPassword} style={{borderColor:'white',borderRadius:'5px'}}></input>
           <div className="confirmPassword error"> </div>
           <br />
           <input type="checkbox" id="terms" />
@@ -110,7 +110,7 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"> </div>
           <br /> <br />
-          <input type="submit" value="sign up validation" />
+          <input type="submit" value="Sign up validation" style={{borderColor:'white',borderRadius:'5px', backgroundColor:'#f2f2f2'}} />
         </form>
       )}
     </div>
