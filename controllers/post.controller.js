@@ -1,4 +1,3 @@
-const postModel = require("../models/post.model");
 const PostModel = require("../models/post.model");
 const {uploadErrors}=require('../utils/errors.utils')
 const UserModel = require("../models/user.model");
@@ -9,7 +8,8 @@ const pipeline=promisify(require('stream').pipeline)
 
 module.exports.readPost = (req, res) => {
   PostModel.find((err, docs) => {
-    if (!err) res.send(docs);
+    console.log(docs)
+    if (!err) res.json(docs);
     else console.log("Error to get data : " + err);
   }).sort({createdAt:-1});
 };

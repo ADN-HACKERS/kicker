@@ -1,3 +1,4 @@
+
 import React from "react";
 import home from './home page.jpg'
 
@@ -10,3 +11,19 @@ const Home = () => {
   );
 };
 export default Home;
+
+import React from 'react';
+import LeftNav from '../components/LeftNav';
+import Thread from '../components/thread';
+const Home=()=>{
+  return (
+    <div>
+   <LeftNav />
+   <div>
+     <Thread />
+   </div>
+    </div>
+  )
+}
+export default Home
+
