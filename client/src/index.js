@@ -11,6 +11,8 @@ import {getUsers} from './actions/users.actions'
 import {composeWithDevTools} from 'redux-devtools-extension';
 import logger from 'redux-logger';
 
+import './App.css'
+
 // dhia test
 // creation our store 
 const store=createStore(
