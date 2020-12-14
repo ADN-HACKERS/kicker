@@ -1,14 +1,18 @@
 import React ,{useContext,useState,useEffect}from 'react';
 import {UidContext} from '../AppContext'
-import Popup from 'reactjs-popup';
+// import Popup from 'reactjs-popup';
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 // import 'reactjs-popup/dist/index.css'
 import '../../../node_modules/font-awesome/css/font-awesome.min.css'
+import {useDispatch} from 'react-redux'
+import {likePost} from "../../actions/post.actions"
 const StarButton = ({post}) => {
   const [liked,setLiked]=useState(false)
   const uid=useContext(UidContext)
+  const dispatch =useDispatch()
   const like=() =>{
-      
+      dispatch(likePost(post._id,uid))
+      setLiked(true)
   }
   const unlike=()=>{
 

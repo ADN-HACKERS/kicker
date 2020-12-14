@@ -3,7 +3,7 @@ import {useSelector} from "react-redux"
 import {NavLink} from 'react-router-dom'
 import {UidContext} from './AppContext'
 import Logout from './Log/Logout'
-import 'C:/Users/Yass-Sali/Desktop/kicker/client/src/App.css';
+// import 'C:/Users/Yass-Sali/Desktop/kicker/client/src/App.css';
 
 
 const Navbar=()=>{
