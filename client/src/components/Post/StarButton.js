@@ -33,7 +33,7 @@ const StarButton = ({post}) => {
       )} */}
       {/* <FontAwesomeIcon icon={["fas", "fa-star"]} /> */}
       {uid && liked === false && (
-      <img src=""  onClick={like} alt='like'/> 
+      <img src={"https://icons-for-free.com/iconfiles/png/512/best+bookmark+premium+rating+select+star+icon-1320168257340660520.png"}  onClick={like} alt='like'  style={{maxHeight:'50px',width:'50px',borderStyle:'solid' , borderRadius:'70px', borderColor:'white'}}/> 
       )}
       {uid && liked &&( <img src=""  onClick={unlike} alt='like'/>) }
       <span>{post.likers.length}</span>

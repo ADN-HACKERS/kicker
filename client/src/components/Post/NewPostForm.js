@@ -41,19 +41,21 @@ useEffect(()=>{
 },[userData])
 
   return (
-    <div>
+    <div style={{display:'flex', justifyContent:'center',margin:'10px' }}>
       <NavLink exact to="/profil" >
         <div >
-          <img src={userData.picture} alt='user-img' />
+          {/* <img src={userData.picture} alt='user-img' style={{maxHeight:'150px',width:'150px',borderStyle:'solide', borderColor:'black'}} /> */}
         </div>
       </NavLink>
       <div>
         <textarea name='message' id='message' placeholder='your new here ... ' onChange={(e)=>setMessage(e.target.value)} value={message} />
+        
       </div>
+      <br/>
       {message || postPicture || video.length > 20 ? (
         <li>
           <div>
-            <img src={userData.picture} alt='user-pic' />
+            <img src={userData.picture} alt='user-pic' style={{maxHeight:'150px',width:'150px',border:'solide', borderColor:'black'}} />
           </div>
           <div>
             <div>

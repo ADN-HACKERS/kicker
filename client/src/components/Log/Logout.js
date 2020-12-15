@@ -25,10 +25,10 @@ const Logout = ()=>{
   };
 
   return (
-    <li onClick={logout}>
-      <p>Logout</p>
-      <img src="./kicker logo.png" alt="logout" />
-    </li>
+    <div onClick={logout}>
+      
+      <img src={"https://static.vecteezy.com/system/resources/previews/000/426/390/non_2x/logout-icon-vector-illustration.jpg" } alt="logout" style={{maxHeight:'50px',width:'50px'}} />
+    </div>
   );
 }
 export default Logout
