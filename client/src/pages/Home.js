@@ -1,10 +1,14 @@
 
-import React from "react";
+import React,{useContext}from "react";
 import home from './home page.jpg'
 import LeftNav from '../components/LeftNav';
+import Log from "../components/Log"
+import {UidContext} from '../components/AppContext'
+import NewPostForm from "../components/Post/NewPostForm"
 import Thread from '../components/thread';
 
 const Home=()=>{
+  const uid=useContext(UidContext)
   return (
     <div>
        <h1 style={{color:'#29293d'}}>
@@ -13,6 +17,7 @@ const Home=()=>{
     </h1>
    <LeftNav />
    <div>
+     {uid ? <NewPostForm />:<Log signin={true} signup={false}/>}
      <Thread />
    </div>
     </div>
