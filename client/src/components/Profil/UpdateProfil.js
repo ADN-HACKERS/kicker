@@ -16,18 +16,18 @@ const UpdateProfil=()=> {
     setUpdateForm(false)
   }
   return (
-    <div>
-      <LeftNav />
+    <div >
+      {/* <LeftNav /> */}
       <h1>Profil of {userData.username}</h1>
-      <div> 
-        <div>
+      <div style={{display:'flex',justifyContent: 'center', border: '1px solid black'}}> 
+        <div style={{margin:'20px'}}>
           <h3>Profile picture</h3>
-          <img src={userData.picture} />
+          <img src={userData.picture}  style={{maxHeight:'300px',width:'300px',borderStyle:'solid' , borderRadius:'70px', borderColor:'white'}}/>
           <UploadImg />
 
       </div>
-      <div>
-        <div> 
+      <div style={{padding:'20px' ,margin:'20px' , border: '1px solid black',width:'400px'}}>
+        <div style={{margin:'20px'}}> 
           <h3>bio</h3>
           {updateForm=== false && (
            <>
@@ -43,9 +43,7 @@ const UpdateProfil=()=> {
           )}
         </div>
         <h4>member since : {moment(userData.createdAt).fromNow()}</h4>
-        <h5 >kicked:{userData.kicked ? userData.kicked.length: '0'}</h5>
-        <h5>kickers:{userData.kickers ? userData.kickers.length: ''}</h5>
-      </div>
+         </div>
     </div>
     </div>
   )

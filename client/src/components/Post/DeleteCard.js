@@ -14,7 +14,7 @@ const DeleteCard =(props)=>{
          deleteQuote()
        }
      }}>
-       <img src="" alt="delete" />
+       <img src={"https://icon-library.com/images/delete-icon/delete-icon-14.jpg"} alt="delete" style={{maxHeight:'50px',width:'50px',borderStyle:'solid' , borderRadius:'70px', borderColor:'white'}} />
      </div>
   )
 }

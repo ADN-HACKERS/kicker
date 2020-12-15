@@ -10,13 +10,13 @@ import Thread from '../components/thread';
 const Home=()=>{
   const uid=useContext(UidContext)
   return (
-    <div>
+    <div style={{border: '1px solid gray',display: 'flex', justifyContent:'center'}}>
        <h1 style={{color:'#29293d'}}>
-     <center>See the world from other angle</center> 
-     <center><img src={home}/></center>
+     {/* <center>See the world from other angle</center>  */}
+     {/* <center><img src={home}/></center> */}
     </h1>
-   <LeftNav />
-   <div>
+   {/* <LeftNav /> */}
+   <div >
      {uid ? <NewPostForm />:<Log signin={true} signup={false}/>}
      <Thread />
    </div>
