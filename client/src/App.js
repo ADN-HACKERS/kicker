@@ -26,7 +26,7 @@ const App = () => {
     // if user exist we call the dispatch
  if(uid) dispatch (getUser(uid))
 
-  }, [uid]);
+  }, [uid,dispatch]);
   return (
     <div >
       {/* store id of user */}
