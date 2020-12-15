@@ -5,7 +5,7 @@ import {UidContext} from '../AppContext'
 // import 'reactjs-popup/dist/index.css'
 import '../../../node_modules/font-awesome/css/font-awesome.min.css'
 import {useDispatch} from 'react-redux'
-import {likePost} from "../../actions/post.actions"
+import {likePost,unlikePost} from "../../actions/post.actions"
 const StarButton = ({post}) => {
   const [liked,setLiked]=useState(false)
   const uid=useContext(UidContext)
@@ -15,7 +15,8 @@ const StarButton = ({post}) => {
       setLiked(true)
   }
   const unlike=()=>{
-
+    dispatch(unlikePost(post._id,uid))
+    setLiked(false)
   }
   useEffect(()=>{
     if(post.likers.includes(uid)) setLiked(true)
@@ -32,9 +33,10 @@ const StarButton = ({post}) => {
       )} */}
       {/* <FontAwesomeIcon icon={["fas", "fa-star"]} /> */}
       {uid && liked === false && (
-        <i className="fas fa-star" onClick={like}></i>
+      <img src=""  onClick={like} alt='like'/> 
       )}
-      {uid && liked && <i className="fas fa-star" onClick={unlike}></i>}
+      {uid && liked &&( <img src=""  onClick={unlike} alt='like'/>) }
+      <span>{post.likers.length}</span>
     </div>
   );
 }
