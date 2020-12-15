@@ -66,7 +66,7 @@ module.exports.updatePost = (req, res) => {
       message:req.body.message,
       
     };
-    postModel.findByIdAndUpdate(req.params.id,{$set:updatedPost},{new:true},(err,data)=>{
+    PostModel.findByIdAndUpdate(req.params.id,{$set:updatedPost},{new:true},(err,data)=>{
       if(!err) res.json(data)
       else console.log(err);
     });
@@ -78,7 +78,7 @@ module.exports.deletePost = (req, res) => {
   if(!ObjectID.isValid(req.params.id)){ 
     return res.status(400).send('Id unknown : ' + req.params.id)
   }
-  postModel.findByIdAndRemove(req.params.id,(err,data)=>{
+  PostModel.findByIdAndRemove(req.params.id,(err,data)=>{
     if(!err) res.json(data)
     else console.log(err)
   })

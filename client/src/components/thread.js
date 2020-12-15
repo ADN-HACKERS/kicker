@@ -19,14 +19,14 @@ useEffect(()=>{
 },[loadPost, dispatch])
 
   return (
-    <div>
-     <ul>
+    <div >
+     <div>
        {!_.isEmpty(posts[0])&& 
        posts.map((post,index)=>{
         return <Card post={post} key={index}/>
        })
        }
-     </ul>
+     </div>
     </div>
   )
 }
