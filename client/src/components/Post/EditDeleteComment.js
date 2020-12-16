@@ -28,7 +28,7 @@ const EditDeleteComment =({comment,postId}) => {
     <div>
       {isAuthor && edit=== false && (
         <span onClick={()=>setEdit(!edit)}>
-          <img src='' alt='edit-comment' />
+          <img src={"https://freeiconshop.com/wp-content/uploads/edd/edit-flat.png"} alt='edit-comment' />
         </span>
       )}
       {isAuthor && edit && (
