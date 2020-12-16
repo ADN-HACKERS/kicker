@@ -11,7 +11,7 @@ const LeftNav =()=>{
           </NavLink>
           <br />
           <NavLink to='/trending' exact activeClassName="active-left-nav">
-            <img src=""  alt="roket"/>
+            <img src=""  alt="trending"/>
           </NavLink>
           <br/>
           <NavLink to='/profil' exact activeClassName="active-left-nav">
